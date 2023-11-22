@@ -198,7 +198,7 @@ function addCar(event) {
                         </div>
     `;
 
-    document.getElementById("cards").innerHTML += card;
+    document.getElementById("cards1").innerHTML += card;
 
 }
 
