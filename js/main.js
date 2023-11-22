@@ -1,6 +1,6 @@
 /*
 
-Crea un array composto da 10 automobili. Ogni oggetto automobile avrà le seguenti proprietà: marca, modello e alimentazione (benzina, diesel, elettrica, ibrida, gpl).
+Crea un array composto da 10 automobili. Ogni oggetto automobile avrà le seguenti proprietà: brand, model e feeding (benzina, diesel, elettrica, ibrida, gpl).
 Dividi le automobili in 3 array separati:
 nel primo array solo le auto a benzina,
 nel secondo solo le auto a diesel,
@@ -18,128 +18,193 @@ Fatevi un piccolo form per aggiungere una nuova auto e aggiungetela alla lista/s
 
 // ARRAY DA 10 AUTOMOBILI
 
-let listaAutomobili = [
+let listOfCars = [
     {
-        marca: "Ferrari",
-        modello: "Superfast",
-        alimentazione: ["Benzina"]
+        brand: "Ferrari",
+        model: "Superfast",
+        feeding: ["Benzina"],
+        photo: "./img/ferrari.jpg"
     },
     {
-        marca: "Audi",
-        modello: "A1",
-        alimentazione: ["Diesel"]
+        brand: "Audi",
+        model: "A1",
+        feeding: ["Diesel"],
+        photo: "./img/audi.jpg"
     },
     {
-        marca: "Bugatti",
-        modello: "Chiron",
-        alimentazione: ["Benzina"]
+        brand: "Bugatti",
+        model: "Chiron",
+        feeding: ["Benzina"],
+        photo: "./img/bugatti.jpg"
     },
     {
-        marca: "Bmw",
-        modello: "Coupe",
-        alimentazione: ["Diesel"]
+        brand: "Bmw",
+        model: "Coupe",
+        feeding: ["Diesel"],
+        photo: "./img/bmw.jpg"
     },
     {
-        marca: "Lamborghini",
-        modello: "Huracan",
-        alimentazione: ["Ibrida"]
+        brand: "Lamborghini",
+        model: "Huracan",
+        feeding: ["Ibrida"],
+        photo: "./img/lamborghini.png"
     },
     {
-        marca: "Mercedes",
-        modello: "Gla",
-        alimentazione: ["Ibrida"]
+        brand: "Mercedes",
+        model: "Gla",
+        feeding: ["Ibrida"],
+        photo: "./img/mercedes.jpg"
     },
     {
-        marca: "Mclaren",
-        modello: "Spider",
-        alimentazione: ["Gpl"]
+        brand: "Mclaren",
+        model: "Spider",
+        feeding: ["Gpl"],
+        photo: "./img/mclaren.jpg"
     },
     {
-        marca: "Porsche",
-        modello: "Panamera",
-        alimentazione: ["Gpl"]
+        brand: "Porsche",
+        model: "Panamera",
+        feeding: ["Gpl"],
+        photo: "./img/porsche.jpg"
     },
     {
-        marca: "Tesla",
-        modello: "Cybertruck",
-        alimentazione: ["Elettrica"]
+        brand: "Tesla",
+        model: "Cybertruck",
+        feeding: ["Elettrica"],
+        photo: "./img/tesla.jpg"
     },
     {
-        marca: "Cadillac",
-        modello: "Eldorado",
-        alimentazione: ["Benzina"]
-    },
+        brand: "Cadillac",
+        model: "Eldorado",
+        feeding: ["Benzina"],
+        photo: "img/cadillacu.webp"
+    }
 ]
 
-printObject(listaAutomobili);
+console.log(listOfCars);
 
 // 3 ARRAY 
 
-let automobiliBenzina = [];
-let automobiliDiesel = [];
-let altreAuto = [];
+let gasolineCars = [];
+let dieselCars = [];
+let otherCars = [];
 
 // CICLO PER STAMPARE LE 3 ARRAY 
 
-listaAutomobili.forEach(function(element) {
-    if (element.alimentazione == "Benzina") {
-        automobiliBenzina.push(element);
-    } else if (element.alimentazione == "Diesel") {
-        automobiliDiesel.push(element);
+listOfCars.forEach(function (element) {
+    if (element.feeding == "Benzina") {
+        gasolineCars.push(element);
+    } else if (element.feeding == "Diesel") {
+        dieselCars.push(element);
     } else {
-        altreAuto.push(element);
+        otherCars.push(element);
     }
 
 
 });
 
-console.log(automobiliBenzina);
-console.log(automobiliDiesel);
-console.log(altreAuto);
+console.log(gasolineCars);
+console.log(dieselCars);
+console.log(otherCars);
 
 
-for (let i = 0; i < listaAutomobili.length; i++) {
-    console.log("Marca:", listaAutomobili[i].marca);
-    console.log("Modello:", listaAutomobili[i].modello);
-    console.log("Alimentazione:", listaAutomobili[i].alimentazione);
-    console.log("");
 
-    
-}
 
-for (let i = 0; i < listaAutomobili.length; i++) {
+
+
+for (let i = 0; i < gasolineCars.length; i++) {
 
     document.getElementById("cards").innerHTML += `
     
-        <div class="card col-4 m-3">
-            <img src="" class="card-img-top" alt="">
+        <div class="card col-3 m-3">
+            <img src="${gasolineCars[i].photo}" class="card-img-top" alt="">
             <div class="card-body">
-                <h5 class="card-text">${listaAutomobili[i].marca}</h5>
-                <p>${listaAutomobili[i].modello}</p>
-                <p>${listaAutomobili[i].alimentazione}</p>
+                <h5 class="card-text">${gasolineCars[i].brand}</h5>
+                <p>${gasolineCars[i].model}</p>
+                <p>${gasolineCars[i].feeding}</p>
             </div>
         </div>
     
     `
-    }
+}
 
-   
+
+
+for (let i = 0; i < dieselCars.length; i++) {
+
+    document.getElementById("cards1").innerHTML += `
+        
+        <div class="card col-3 m-3">
+            <img src="${dieselCars[i].photo}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-text">${dieselCars[i].brand}</h5>
+                <p>${dieselCars[i].model}</p>
+                <p>${dieselCars[i].feeding}</p>
+            </div>
+        </div>
+        
+    `
+}
+
+
+
+for (let i = 0; i < otherCars.length; i++) {
+
+    document.getElementById("cards2").innerHTML += `
+        
+        <div class="card col-3 m-3">
+            <img src="${otherCars[i].photo}" class="card-img-top" alt="">
+            <div class="card-body">
+                <h5 class="card-text">${otherCars[i].brand}</h5>
+                <p>${otherCars[i].model}</p>
+                <p>${otherCars[i].feeding}</p>
+            </div>
+        </div>
+        
+    `
+}
+
+
+
+
+function addCar(event) {
+    event.preventDefault();
+
+    console.log("AGGIUNGI UN AUTOMOBILE!");
+
+    let newBrand = document.getElementById("brand").value;
+    let newModel = document.getElementById("model").value;
+    let newFeeding = document.getElementById("feeding").value;
+
+
+    let newCars = {
+        brand: newBrand,
+        model: newModel,
+        feeding: newFeeding,
+        
+    };
+
+    listOfCars.push(addCar);
+
+    
+    let card = `
+                        <div class="card col-3 m-3">
+                            
+                            <div class="card-body">
+                                <h5 class="card-text">${newCars.brand}</h5>
+                                <p>${newCars.model}</p>
+                                <p>${newCars.feeding}</p>
+                            </div>
+                        </div>
+    `;
+
+    document.getElementById("cards").innerHTML += card;
+
+}
+
+
 
 
 
 // ------------ FUNZIONI ---------------------
 
-function printObject(object) {
-    let string = "";
-
-    string += "{\n";
-
-    for (let key in object) {
-        string += "\t " + key + ": " + object[key] + "\n";
-    }
-
-    string += "}";
-
-    console.log(string);
-
-}
